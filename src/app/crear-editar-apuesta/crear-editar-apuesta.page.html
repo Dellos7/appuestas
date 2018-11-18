@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ editar ? 'Editar apuesta' : 'Nueva apuesta' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button clear (click)="cerrar()">Cancelar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-input type="date" [(ngModel)]="apuesta.fecha" slot="end"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Bank prepartido</ion-label>
+        <ion-input type="number" [(ngModel)]="apuesta.bankPrepartido" slot="end"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label>Stake</ion-label>
+      <ion-input type="number" [(ngModel)]="apuesta.stake" slot="end"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cuota</ion-label>
+      <ion-input type="number" [(ngModel)]="apuesta.cuota" slot="end"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apuesta</ion-label>
+      <ion-input type="number" [(ngModel)]="apuesta.apuesta" slot="end"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Tipster</ion-label>
+        <ion-input type="text" [(ngModel)]="apuesta.tipster" slot="end"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Detalle</ion-label>
+          <ion-input type="textarea" [(ngModel)]="apuesta.descripcion" slot="end"></ion-input>
+        </ion-item>
+  </ion-list>
+
+  <ion-button centered expand="block" (click)="guardarApuesta()">
+    Guardar
+  </ion-button>
+
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary">
+    <ion-title>Mis apuestas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="modalNuevaApuesta()">
+        <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+      <div *ngFor="let apuesta of misApuestas" padding>
+        <ion-item lines="none" [ngClass]="colorFondoSegunResultado(apuesta)">
+          <ion-label [color]="apuesta.esFinalizada() ? 'light' : 'dark'" (click)="abrirDetalleApuesta(apuesta)">
+            <h2>{{ apuesta.fechaFormateada() }}</h2>
+            <h3><span class="bold">Ganancias pot.:</span> {{apuesta.obtenerGananciasPotenciales()}}€</h3>
+            <h3><span class="bold">Unidades pot.:</span> {{apuesta.obtenerUnidadesPotenciales()}}U</h3>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button *ngIf="!apuesta.esFinalizada()" (click)="mostrarOpcionesResultado(apuesta)">
+                <ion-icon slot="icon-only" name="help-circle"></ion-icon>
+            </ion-button>
+            <ion-button color="light" *ngIf="apuesta.esFinalizada()" (click)="mostrarOpcionesResultado(apuesta)">
+                <ion-icon *ngIf="apuesta.esGanada()" slot="icon-only" name="done-all"></ion-icon>
+                <ion-icon *ngIf="apuesta.esPerdida()" slot="icon-only" name="remove-circle-outline"></ion-icon>
+                <ion-icon *ngIf="apuesta.esNula()" slot="icon-only" name="warning"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        <ion-item [ngClass]="colorFondoSegunResultado(apuesta)">
+          <ion-label [color]="apuesta.esFinalizada() ? 'light' : 'dark'">
+            <p>{{ apuesta.descripcion }}</p>
+          </ion-label>
+        </ion-item>
+      </div>
+      </ion-list>
+
+</ion-content>

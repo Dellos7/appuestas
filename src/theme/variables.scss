@@ -74,4 +74,60 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-color-ganada: #20b2aa;
+  --ion-color-perdida: #DB7092;
+  --ion-color-nula: #b0c4de;
+}
+
+/** Custom colors **/
+
+.ion-color-ganada-boton {
+    /** Apuesta ganada **/
+    --ion-color-base: #10dc60;
+    --ion-color-base-rgb: 16, 220, 96;
+    --ion-color-contrast: #ffffff;
+    --ion-color-contrast-rgb: 255, 255, 255;
+    --ion-color-shade: #0ec254;
+    --ion-color-tint: #28e070;
+}
+
+.ion-color-perdida-boton {
+  /** Apuesta perdida **/
+  --ion-color-base: #f04141;
+  --ion-color-base-rgb: 245, 61, 61;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 255, 255, 255;
+  --ion-color-shade: #d33939;
+  --ion-color-tint: #f25454;
+}
+
+.ion-color-ganada {
+  /** Apuesta nula **/
+  --ion-color-base: #20b2aa;
+  --ion-color-base-rgb: 56, 128, 255;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 255, 255, 255;
+  --ion-color-shade: #007974;
+  --ion-color-tint: #6BD5D1;
+}
+
+.ion-color-perdida {
+  /** Apuesta perdida **/
+  --ion-color-base: #DB7092;
+  --ion-color-base-rgb: 245, 61, 61;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 255, 255, 255;
+  --ion-color-shade: #9B264B;
+  --ion-color-tint: #EB9CB5;
+}
+
+.ion-color-nula {
+  /** Apuesta nula **/
+  --ion-color-base: #b0c4de;
+  --ion-color-base-rgb: 56, 128, 255;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 255, 255, 255;
+  --ion-color-shade: #819DC0;
+  --ion-color-tint: #DAE5F3;
 }

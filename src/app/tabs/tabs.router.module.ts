@@ -1,3 +1,4 @@
+import { MisApuestasPage } from './../mis-apuestas/mis-apuestas.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -13,7 +14,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/tabs/(home:home)',
+        redirectTo: '/tabs/(misapuestas:misapuestas)',
         pathMatch: 'full',
       },
       {
@@ -30,12 +31,17 @@ const routes: Routes = [
         path: 'contact',
         outlet: 'contact',
         component: ContactPage
+      },
+      {
+        path: 'misapuestas',
+        outlet: 'misapuestas',
+        component: MisApuestasPage
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:home)',
+    redirectTo: '/tabs/(misapuestas:misapuestas)',
     pathMatch: 'full'
   }
 ];

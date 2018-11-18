@@ -1,6 +1,8 @@
 {
   "name": "Appuestas",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "pro_id": "7912d46e"
 }
