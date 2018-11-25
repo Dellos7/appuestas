@@ -1,0 +1,11 @@
+ion-label {
+    color: var(--ion-color-primary) !important;
+}
+
+.opciones-apuesta{
+    & ion-buttons {
+        & ion-button {
+            margin: 0 auto;
+        }
+    }
+}

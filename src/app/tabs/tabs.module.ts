@@ -1,5 +1,5 @@
+import { ConfiguracionPageModule } from './../configuracion/configuracion.module';
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -21,7 +21,8 @@ import { MisApuestasPageModule } from '../mis-apuestas/mis-apuestas.module';
     HomePageModule,
     AboutPageModule,
     ContactPageModule,
-    MisApuestasPageModule
+    MisApuestasPageModule,
+    ConfiguracionPageModule
   ],
   declarations: [TabsPage]
 })

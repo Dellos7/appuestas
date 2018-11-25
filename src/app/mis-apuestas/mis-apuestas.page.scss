@@ -1,18 +1,3 @@
-.apuesta-ganada-fondo {
-    --background: var(--ion-color-ganada);
-    background: var(--ion-color-ganada);
-}
-
-.apuesta-perdida-fondo {
-    --background: var(--ion-color-perdida);
-    background: var(--ion-color-perdida);
-}
-
-.apuesta-nula-fondo {
-    --background: var(--ion-color-nula);
-    background: var(--ion-color-nula);
-}
-
 .btn-grande {
     font-size: 1.2rem;
 }
@@ -21,4 +6,9 @@ ion-item{
     &.item-lista {
         --background: inherit;
     }
+}
+
+.fecha-apuesta {
+    color: var(--ion-color-primary);
+    font-weight: bold;
 }

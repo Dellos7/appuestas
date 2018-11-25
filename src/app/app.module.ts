@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { IonicStorageModule } from '@ionic/storage';
     IonicStorageModule.forRoot({
       name: '__appuestasdb',
       driverOrder: ['indexeddb', 'sqlite', 'websql']
-    })
+    }),
+    SharedModule
   ],
   providers: [
     StatusBar,

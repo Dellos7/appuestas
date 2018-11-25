@@ -27,7 +27,6 @@ export class MisApuestasService {
             apuestasObjArr.push(apuestaObj);
           }
           this.apuestas = apuestasObjArr;
-          console.log(this.apuestas);
         }
       }
     }
@@ -41,8 +40,14 @@ export class MisApuestasService {
   }
 
   nuevaApuesta( apuesta: Apuesta ) {
-    this.getApuestas();
+    //this.getApuestas()
     this.apuestas.push(apuesta);
+    this.guardarApuestas();
+  }
+
+  eliminarApuesta( apuesta: Apuesta ) {
+    //this.getApuestas();
+    this.apuestas.splice( this.apuestas.indexOf(apuesta), 1 );
     this.guardarApuestas();
   }
 

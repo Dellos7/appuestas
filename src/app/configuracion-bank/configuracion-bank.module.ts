@@ -1,6 +1,4 @@
 import { SharedModule } from './../shared.module';
-import { PageContentWidthDirective } from './../page-content-width.directive';
-import { CrearEditarApuestaPageModule } from './../crear-editar-apuesta/crear-editar-apuesta.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,12 +6,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MisApuestasPage } from './mis-apuestas.page';
+import { ConfiguracionBankPage } from './configuracion-bank.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: MisApuestasPage
+    component: ConfiguracionBankPage
   }
 ];
 
@@ -22,10 +20,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    CrearEditarApuestaPageModule,
     RouterModule.forChild(routes),
     SharedModule
   ],
-  declarations: [MisApuestasPage]
+  declarations: [ConfiguracionBankPage]
 })
-export class MisApuestasPageModule {}
+export class ConfiguracionBankPageModule {}

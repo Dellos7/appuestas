@@ -1,47 +1,65 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>{{ editar ? 'Editar apuesta' : 'Nueva apuesta' }}</ion-title>
-    <ion-buttons slot="end">
+    <ion-buttons slot="start">
       <ion-button clear (click)="cerrar()">Cancelar</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button clear (click)="guardarApuesta()">Guardar</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
-  <ion-list>
-    <ion-item>
-      <ion-label>Fecha</ion-label>
-      <ion-input type="date" [(ngModel)]="apuesta.fecha" slot="end"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label>Bank prepartido</ion-label>
-        <ion-input type="number" [(ngModel)]="apuesta.bankPrepartido" slot="end"></ion-input>
-      </ion-item>
-    <ion-item>
-      <ion-label>Stake</ion-label>
-      <ion-input type="number" [(ngModel)]="apuesta.stake" slot="end"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Cuota</ion-label>
-      <ion-input type="number" [(ngModel)]="apuesta.cuota" slot="end"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Apuesta</ion-label>
-      <ion-input type="number" [(ngModel)]="apuesta.apuesta" slot="end"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label>Tipster</ion-label>
-        <ion-input type="text" [(ngModel)]="apuesta.tipster" slot="end"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label>Detalle</ion-label>
-          <ion-input type="textarea" [(ngModel)]="apuesta.descripcion" slot="end"></ion-input>
+<ion-content padding [ngClass]="colorFondoSegunResultado(apuesta)">
+  <div pageContentWidth>
+    <ion-list>
+        <ion-item>
+          <ion-label position="floating">Fecha</ion-label>
+          <ion-input name="fecha" type="date" [(ngModel)]="apuesta.fecha" (keyup.enter)="guardarApuesta()"></ion-input>
         </ion-item>
-  </ion-list>
-
-  <ion-button centered expand="block" (click)="guardarApuesta()">
-    Guardar
-  </ion-button>
-
+        <ion-item>
+          <ion-label position="floating">Bank prepartido</ion-label>
+          <ion-input name="bankPrepartido" type="number" [(ngModel)]="apuesta.bankPrepartido" (keyup.enter)="guardarApuesta()"></ion-input>
+          <div slot="end" class="unidades-input-floating">€</div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Stake</ion-label>
+          <ion-input name="stake" type="number" [(ngModel)]="apuesta.stake" (keyup.enter)="guardarApuesta()"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Cuota</ion-label>
+          <ion-input name="cuota" type="number" [(ngModel)]="apuesta.cuota" (keyup.enter)="guardarApuesta()"></ion-input>
+          <div slot="end"></div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apuesta</ion-label>
+          <ion-input name="apuesta" type="number" [(ngModel)]="apuesta.apuesta" (keyup.enter)="guardarApuesta()"></ion-input>
+          <div slot="end" class="unidades-input-floating">€</div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Tipster</ion-label>
+          <ion-input name="tipster" type="text" [(ngModel)]="apuesta.tipster" (keyup.enter)="guardarApuesta()"></ion-input>
+          <div slot="end"></div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Detalle</ion-label>
+          <ion-textarea name="descripcion" type="textarea" [(ngModel)]="apuesta.descripcion" (keyup.enter)="guardarApuesta()"></ion-textarea>
+        </ion-item>
+    </ion-list>
+    <div class="opciones-apuesta">
+      <ion-buttons>
+        <ion-button *ngIf="!apuesta.esFinalizada()" (click)="mostrarOpcionesResultado(apuesta, false)">
+            <ion-icon slot="icon-only" name="time"></ion-icon>
+        </ion-button>
+        <ion-button color="light" *ngIf="apuesta.esFinalizada()" (click)="mostrarOpcionesResultado(apuesta, false)">
+            <ion-icon *ngIf="apuesta.esGanada()" slot="icon-only" name="done-all"></ion-icon>
+            <ion-icon *ngIf="apuesta.esPerdida()" slot="icon-only" name="remove-circle-outline"></ion-icon>
+            <ion-icon *ngIf="apuesta.esNula()" slot="icon-only" name="code"></ion-icon>
+        </ion-button>
+        <ion-button [color]="apuesta.esFinalizada() ? 'light' : 'danger'" (click)="eliminarApuesta()" *ngIf="editar">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </div>
 </ion-content>

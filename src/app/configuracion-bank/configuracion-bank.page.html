@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Configuración del Bank</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" defaultHref="/tabs/(configuracion:configuracion)"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-button clear (click)="guardarConfiguracionBank()">Guardar</ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div pageContentWidth>
+    <ion-list>
+        <ion-item>
+          <ion-label position="floating">Bank inicial</ion-label>
+          <ion-input type="number" inputmode="numeric" (keydown.enter)="guardarConfiguracionBank()" [(ngModel)]="configuracion.bank.bankInicial"></ion-input>
+          <div slot="end" class="unidades-input-floating">€</div>
+        </ion-item>
+      </ion-list>
+  </div>
+</ion-content>

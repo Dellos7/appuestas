@@ -111,4 +111,8 @@ export class Apuesta {
         return this.fecha;
     }
 
+    private getFecha() {
+        return new Date(this.fecha);
+      }
+
 }

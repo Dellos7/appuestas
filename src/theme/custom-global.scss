@@ -9,3 +9,35 @@
 ion-button .height-100-cv {
     --height: 100%;
 }
+
+.unidades-input-floating {
+    transform: translateY(50%);
+}
+
+.apuesta-ganada-fondo {
+    --background: var(--ion-color-ganada);
+    background: var(--ion-color-ganada);
+}
+
+.apuesta-perdida-fondo {
+    --background: var(--ion-color-perdida);
+    background: var(--ion-color-perdida);
+}
+
+.apuesta-nula-fondo {
+    --background: var(--ion-color-nula);
+    background: var(--ion-color-nula);
+}
+
+@media (min-width: 700px) {
+    .page-max-width {
+      max-width: 700px;
+      margin: auto;
+      position: relative;
+    }
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Nunito');
+  html {
+    --ion-font-family: "Nunito", sans-serif !important;
+  }

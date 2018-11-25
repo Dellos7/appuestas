@@ -1,3 +1,5 @@
+import { ConfiguracionBankPage } from './../configuracion-bank/configuracion-bank.page';
+import { ConfiguracionPage } from './../configuracion/configuracion.page';
 import { MisApuestasPage } from './../mis-apuestas/mis-apuestas.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -36,7 +38,17 @@ const routes: Routes = [
         path: 'misapuestas',
         outlet: 'misapuestas',
         component: MisApuestasPage
-      }
+      },
+      {
+        path: 'configuracion',
+        outlet: 'configuracion',
+        component: ConfiguracionPage
+      },
+      {
+        path: 'bank',
+        outlet: 'configuracion',
+        component: ConfiguracionBankPage
+      },
     ]
   },
   {
